@@ -15,6 +15,12 @@ list of tags!
 
 Created by [XOXCO](http://xoxco.com)
 
+Updated by Rynn Wang (rynn.wang@outlook.com)
+To support following things:
+	- ignoreCase
+	- removeTipText
+	- beforeAddTag
+
 
 ## Instructions
 
@@ -92,12 +98,15 @@ option to false.
 	   'width':'300px',
 	   'interactive':true,
 	   'defaultText':'add a tag',
-	   'onAddTag':callback_function,
-	   'onRemoveTag':callback_function,
-	   'onChange' : callback_function,
+	   'onAddTag':function( value){},
+	   'onRemoveTag':function( value){},
+	   'onChange' : function(element, value){},
 	   'delimiter': [',',';'],   // Or a string with a single delimiter. Ex: ';'
 	   'removeWithBackspace' : true,
 	   'minChars' : 0,
 	   'maxChars' : 0, // if not provided there is no limit
-	   'placeholderColor' : '#666666'
+	   'placeholderColor' : '#666666',
+	   'ignoreCase': false, //default value:false
+	   'removeTipText': 'Click to remove this tag',
+	   'beforeAddTag': function(value){} //if return true, adding action would be aborted.
 	});
